@@ -134,4 +134,4 @@ Desenvolvido como parte da Avaliação G2 da disciplina de Linguagem de Programa
 
 ## Licença
 
-Este projeto é de uso acadêmico.
+Este projeto é de uso acadêmico .
