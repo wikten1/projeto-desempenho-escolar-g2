@@ -1,4 +1,4 @@
-# 📚 Desempenho Escolar no Brasil
+# Desempenho Escolar no Brasil
 
 > Projeto G2 — Análise e Visualização de Dados com Python  
 > Disciplina: Linguagem de Programação — Análise e Visualização de Dados com Python  
@@ -6,13 +6,13 @@
 
 ---
 
-## 📌 Sobre o Projeto
+## Sobre o Projeto
 
 Este projeto realiza uma análise exploratória completa do desempenho escolar no Brasil entre os anos de **2015 e 2024**, investigando indicadores educacionais como médias de notas, taxas de aprovação e reprovação, desigualdades regionais, diferenças entre redes de ensino (pública e privada) e fatores associados ao rendimento dos estudantes, como renda familiar e acesso à internet.
 
 ---
 
-## 🎯 Perguntas Orientadoras
+## Perguntas Orientadoras
 
 - Quais estados apresentam melhor desempenho escolar?
 - Existem diferenças entre escolas públicas e privadas?
@@ -24,7 +24,7 @@ Este projeto realiza uma análise exploratória completa do desempenho escolar n
 
 ---
 
-## 🗂️ Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 projeto-desempenho-escolar/
@@ -46,7 +46,7 @@ projeto-desempenho-escolar/
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 | Tecnologia      | Finalidade                       |
 | --------------- | -------------------------------- |
@@ -63,7 +63,7 @@ projeto-desempenho-escolar/
 
 ---
 
-## 📊 Dataset
+## Dataset
 
 **Arquivo:** `simulacao_desempenho_escolar_brasil.csv`
 
@@ -87,7 +87,7 @@ projeto-desempenho-escolar/
 
 ---
 
-## ⚡ Funcionalidades
+## Funcionalidades
 
 ### Intermediárias
 - Filtros múltiplos no Streamlit (ano, semestre, região, estado, rede, disciplina, nível)
@@ -102,7 +102,7 @@ projeto-desempenho-escolar/
 
 ---
 
-## 🚀 Como Executar Localmente
+## Como Executar Localmente
 
 ```bash
 # Clone o repositório
@@ -120,9 +120,9 @@ streamlit run app.py
 
 ## 🔗 Links do Projeto
 
-- 📁 **Repositório GitHub:** [github.com/wikten1/projeto-desempenho-escolar](https://github.com/SEU_USUARIO/projeto-desempenho-escolar)
-- 🌐 **GitHub Pages:** [SEU_USUARIO.github.io/projeto-desempenho-escolar](https://SEU_USUARIO.github.io/projeto-desempenho-escolar)
-- 📊 **Dashboard Streamlit:** [SEU_USUARIO-desempenho-escolar.streamlit.app](https://SEU_USUARIO-desempenho-escolar.streamlit.app)
+- **Repositório GitHub:** [github.com/wikten1/projeto-desempenho-escolar](https://github.com/SEU_USUARIO/projeto-desempenho-escolar)
+- **GitHub Pages:** [SEU_USUARIO.github.io/projeto-desempenho-escolar](https://SEU_USUARIO.github.io/projeto-desempenho-escolar)
+- **Dashboard Streamlit:** [SEU_USUARIO-desempenho-escolar.streamlit.app](https://SEU_USUARIO-desempenho-escolar.streamlit.app)
 
 ---
 
