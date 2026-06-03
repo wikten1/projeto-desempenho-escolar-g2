@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Desempenho Escolar no Brasil — Projeto G2</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f6f9;
+      color: #2d2d2d;
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a3a5c 0%, #2e6da4 100%);
+      color: white;
+      padding: 60px 20px 50px;
+      text-align: center;
+    }
+
+    header .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.4);
+      color: white;
+      font-size: 13px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.88;
+      max-width: 600px;
+      margin: 0 auto 28px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+
+    .btn-primary {
+      background: white;
+      color: #1a3a5c;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid rgba(255,255,255,0.6);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* KPIs */
+    .kpis {
+      background: white;
+      padding: 50px 20px;
+      border-bottom: 1px solid #e8ecf0;
+    }
+
+    .kpis h2 {
+      text-align: center;
+      font-size: 1.6rem;
+      color: #1a3a5c;
+      margin-bottom: 32px;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .kpi-card {
+      background: #f0f5fb;
+      border-radius: 12px;
+      padding: 24px 20px;
+      text-align: center;
+      border-top: 4px solid #2e6da4;
+    }
+
+    .kpi-card .value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1a3a5c;
+      display: block;
+    }
+
+    .kpi-card .label {
+      font-size: 13px;
+      color: #5a6a7a;
+      margin-top: 6px;
+    }
+
+    /* Seções */
+    section { padding: 60px 20px; }
+
+    section h2 {
+      font-size: 1.6rem;
+      color: #1a3a5c;
+      margin-bottom: 28px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e0e8f0;
+    }
+
+    /* Perguntas orientadoras */
+    .questions {
+      background: white;
+    }
+
+    .question-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .question-list li {
+      background: #f0f5fb;
+      border-left: 4px solid #2e6da4;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      font-size: 15px;
+      color: #2d2d2d;
+    }
+
+    /* Tecnologias */
+    .tech { background: #f4f6f9; }
+
+    .tech-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .tech-tag {
+      background: white;
+      border: 1px solid #dce4ed;
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a3a5c;
+    }
+
+    /* Estrutura */
+    .structure { background: white; }
+
+    .folder-tree {
+      background: #1e2a38;
+      color: #a8d5ff;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      line-height: 1.9;
+      padding: 28px 32px;
+      border-radius: 12px;
+      max-width: 500px;
+    }
+
+    .folder-tree .dir { color: #6ec6ff; font-weight: bold; }
+    .folder-tree .file { color: #c8e6c9; }
+    .folder-tree .comment { color: #607d8b; }
+
+    /* Funcionalidades */
+    .features { background: #f4f6f9; }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 12px;
+      padding: 28px 24px;
+      border: 1px solid #dce4ed;
+    }
+
+    .feature-card h3 {
+      font-size: 1rem;
+      color: #1a3a5c;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .feature-card .tag {
+      font-size: 11px;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    .tag-inter { background: #e3f0ff; color: #1a5fa8; }
+    .tag-adv   { background: #fff3e0; color: #c17a00; }
+
+    .feature-card ul {
+      list-style: none;
+      font-size: 14px;
+      color: #4a5568;
+    }
+
+    .feature-card ul li { padding: 4px 0; padding-left: 16px; position: relative; }
+    .feature-card ul li::before { content: '→'; position: absolute; left: 0; color: #2e6da4; }
+
+    /* Links */
+    .links { background: white; text-align: center; }
+
+    .links-grid {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .link-card {
+      background: #f0f5fb;
+      border: 1px solid #dce4ed;
+      border-radius: 12px;
+      padding: 24px 32px;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+      min-width: 200px;
+    }
+
+    .link-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+
+    .link-card .icon { font-size: 2rem; margin-bottom: 8px; }
+    .link-card .title { font-size: 15px; font-weight: 700; color: #1a3a5c; }
+    .link-card .desc  { font-size: 13px; color: #5a6a7a; margin-top: 4px; }
+
+    footer {
+      background: #1a3a5c;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 14px;
+    }
+
+    footer strong { color: white; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="badge">Projeto G2 · Tema 24</div>
+    <h1>📚 Desempenho Escolar no Brasil</h1>
+    <p>Análise e visualização de dados educacionais brasileiros entre 2015 e 2024 — investigando desigualdades, tendências e fatores de desempenho.</p>
+    <div class="btn-group">
+      <a href="https://SEU_USUARIO-desempenho-escolar.streamlit.app" class="btn btn-primary" target="_blank">▶ Acessar Dashboard</a>
+      <a href="https://github.com/SEU_USUARIO/projeto-desempenho-escolar" class="btn btn-secondary" target="_blank">⌥ Ver no GitHub</a>
+    </div>
+  </header>
+
+  <!-- KPIs -->
+  <div class="kpis">
+    <h2>Visão Geral dos Dados</h2>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <span class="value">740</span>
+        <span class="label">Registros analisados</span>
+      </div>
+      <div class="kpi-card">
+        <span class="value">10</span>
+        <span class="label">Anos (2015–2024)</span>
+      </div>
+      <div class="kpi-card">
+        <span class="value">5</span>
+        <span class="label">Regiões do Brasil</span>
+      </div>
+      <div class="kpi-card">
+        <span class="value">5</span>
+        <span class="label">Disciplinas avaliadas</span>
+      </div>
+      <div class="kpi-card">
+        <span class="value">2</span>
+        <span class="label">Redes de ensino</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PERGUNTAS ORIENTADORAS -->
+  <section class="questions">
+    <div class="container">
+      <h2>❓ Perguntas Orientadoras</h2>
+      <ul class="question-list">
+        <li>Quais estados apresentam melhor desempenho escolar?</li>
+        <li>Existem diferenças entre escolas públicas e privadas?</li>
+        <li>Houve melhoria no desempenho ao longo do tempo?</li>
+        <li>Existe relação entre renda familiar e desempenho?</li>
+        <li>Como o acesso à internet impacta o aprendizado?</li>
+        <li>Quais disciplinas apresentam menor rendimento?</li>
+        <li>Existem desigualdades regionais relevantes?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TECNOLOGIAS -->
+  <section class="tech">
+    <div class="container">
+      <h2>🛠️ Tecnologias Utilizadas</h2>
+      <div class="tech-grid">
+        <div class="tech-tag">Python 3.11+</div>
+        <div class="tech-tag">Pandas</div>
+        <div class="tech-tag">NumPy</div>
+        <div class="tech-tag">Matplotlib</div>
+        <div class="tech-tag">Seaborn</div>
+        <div class="tech-tag">Plotly</div>
+        <div class="tech-tag">Streamlit</div>
+        <div class="tech-tag">GitHub</div>
+        <div class="tech-tag">GitHub Pages</div>
+        <div class="tech-tag">Streamlit Cloud</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTRUTURA -->
+  <section class="structure">
+    <div class="container">
+      <h2>🗂️ Estrutura do Projeto</h2>
+      <div class="folder-tree">
+        <span class="dir">projeto-desempenho-escolar/</span><br>
+        │<br>
+        ├── <span class="file">app.py</span><br>
+        ├── <span class="file">requirements.txt</span><br>
+        ├── <span class="file">README.md</span><br>
+        ├── <span class="file">index.html</span><br>
+        │<br>
+        ├── <span class="dir">dados/</span><br>
+        │&nbsp;&nbsp;&nbsp;└── <span class="file">simulacao_desempenho_escolar_brasil.csv</span><br>
+        │<br>
+        ├── <span class="dir">notebooks/</span><br>
+        │&nbsp;&nbsp;&nbsp;└── <span class="file">analise_desempenho_escolar.ipynb</span><br>
+        │<br>
+        ├── <span class="dir">database/</span><br>
+        └── <span class="dir">imagens/</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUNCIONALIDADES -->
+  <section class="features">
+    <div class="container">
+      <h2>⚡ Funcionalidades</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Intermediárias <span class="tag tag-inter">Intermediária</span></h3>
+          <ul>
+            <li>Filtros múltiplos no Streamlit</li>
+            <li>KPIs dinâmicos por filtro</li>
+            <li>Gráficos interativos com Plotly</li>
+            <li>Análise temporal 2015–2024</li>
+            <li>Visualizações comparativas</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <h3>Avançadas <span class="tag tag-adv">Avançada</span></h3>
+          <ul>
+            <li>Dashboard multipágina</li>
+            <li>Correlação estatística (Pandas/NumPy)</li>
+            <li>Renda x desempenho</li>
+            <li>Internet x notas</li>
+            <li>Análise por disciplina e região</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINKS -->
+  <section class="links">
+    <div class="container">
+      <h2>🔗 Acesse o Projeto</h2>
+      <div class="links-grid">
+        <a class="link-card" href="https://github.com/SEU_USUARIO/projeto-desempenho-escolar" target="_blank">
+          <div class="icon">⌥</div>
+          <div class="title">GitHub</div>
+          <div class="desc">Código-fonte completo</div>
+        </a>
+        <a class="link-card" href="https://SEU_USUARIO-desempenho-escolar.streamlit.app" target="_blank">
+          <div class="icon">📊</div>
+          <div class="title">Dashboard</div>
+          <div class="desc">Streamlit Community Cloud</div>
+        </a>
+        <a class="link-card" href="notebooks/analise_desempenho_escolar.ipynb" target="_blank">
+          <div class="icon">📓</div>
+          <div class="title">Notebook</div>
+          <div class="desc">Análise exploratória completa</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <strong>Desempenho Escolar no Brasil</strong> · Projeto G2 · Tema 24<br>
+    Disciplina: Linguagem de Programação — Análise e Visualização de Dados com Python
+  </footer>
+
+</body>
+</html>
