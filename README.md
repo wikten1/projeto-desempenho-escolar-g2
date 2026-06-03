@@ -118,7 +118,7 @@ streamlit run app.py
 
 ---
 
-## 🔗 Links do Projeto
+## Links do Projeto
 
 - **Repositório GitHub:** [github.com/wikten1/projeto-desempenho-escolar](https://github.com/SEU_USUARIO/projeto-desempenho-escolar)
 - **GitHub Pages:** [SEU_USUARIO.github.io/projeto-desempenho-escolar](https://SEU_USUARIO.github.io/projeto-desempenho-escolar)
@@ -126,12 +126,12 @@ streamlit run app.py
 
 ---
 
-## 👤 Autor: Wikten Alves de Medeiros
+## Autor: Wikten Alves de Medeiros
 
 Desenvolvido como parte da Avaliação G2 da disciplina de Linguagem de Programação — Análise e Visualização de Dados com Python.
 
 ---
 
-## 📄 Licença
+## Licença
 
 Este projeto é de uso acadêmico.
