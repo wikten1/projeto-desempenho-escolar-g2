@@ -3,7 +3,7 @@
 > Projeto G2 — Análise e Visualização de Dados com Python  
 > Disciplina: Linguagem de Programação — Análise e Visualização de Dados com Python  
 > Tema 24 — Desempenho Escolar no Brasil  
-> Aluno: Wikten Alves de Medeiros  
+> Alunos: Wikten Alves de Medeiros, Eduarda Dias Vieira Dado  
 > Professor: Alexandre Neves Louzada
 
 ---
